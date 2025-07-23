@@ -82,9 +82,26 @@ namespace demo
             //Console.WriteLine($"Id: {student.Id}, Name: {student.Name}, Age: {student.Age}, Grade   : {student.Grade},:gender: {student.Gender}");
             #endregion
             #region EX3 IN ENUM
-            User user = new User();
+           // User user = new User();
 
             #endregion
+
+            #region enum methods
+            string [] names = Enum.GetNames(typeof(Grade));
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
+            Array values = Enum.GetValues(typeof(Grade));
+            foreach (var value in values)
+            {
+                Console.WriteLine((int)value);
+            }
+
+
+            bool isDefined = Enum.IsDefined(typeof(Grade), "A");
+            #endregion
+
         }
     }
 }
